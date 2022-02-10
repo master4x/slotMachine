@@ -12,7 +12,7 @@ int score = 100;
 void setup()
 {
   pinMode(buttonPin, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(buttonPin), buttonPressed, LOW);
+  attachInterrupt(digitalPinToInterrupt(buttonPin), buttonPressed, FALLING);
 
   lcd.init();
   lcd.backlight();
@@ -24,8 +24,8 @@ void setup()
 void loop()
 {
   if (buttonIsPressed) {
-    buttonIsPressed = false;
     turn();
+    buttonIsPressed = false;
   }
 }
 

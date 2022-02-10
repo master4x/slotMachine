@@ -3,7 +3,9 @@
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-int buttonPin = 2;
+const int buttonPin = 2;
+
+boolean buttonIsPressed = false;
 
 void setup()
 {
@@ -17,12 +19,15 @@ void setup()
 
 void loop()
 {
-  
+  if (buttonIsPressed) {
+    buttonIsPressed = false;
+    lcd.setCursor(0,0);
+    lcd.print("Hello, world!");
+    delay(1000);
+    lcd.clear();
+  }
 }
 
 void buttonPressed() {
-  lcd.setCursor(0,0);
-  lcd.print("Hello, world!");
-  delay(1000);
-  lcd.clear();
+  buttonIsPressed = true;
 }

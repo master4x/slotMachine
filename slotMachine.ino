@@ -4,7 +4,8 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 const int buttonPin = 2;
-const unsigned long interval = 500;
+const unsigned long interval = 3000;
+const int turnDisplayDelay = 1000;
 
 boolean buttonIsPressed = false;
 unsigned long previousMillis = 0, currentMillis = 0;
@@ -62,6 +63,8 @@ bool turnAllowed() {
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Score to low :-(");
+    lcd.setCursor(1,1);
+    lcd.print("bit.ly/3sNgXRx");
     return false;
   }
   return true;
@@ -79,14 +82,16 @@ void displayTurn() {
   for (int j = 0; j < 5; j = j+2) {
     lcd.setCursor(j,0);
     lcd.print(slot[i]);
+    if (i < 2)
+      delay(turnDisplayDelay);
     i++;
   }
 }
 
 void calculeteScore() {
-  if (slot[0]==slot[1] && slot[1]==slot[2])
+  if (slot[0] == slot[1] && slot[1] == slot[2])
     score += 25;
-  else if (slot[0]==slot[1] || slot[1]==slot[2] || slot[0]==slot[2])
+  else if (slot[0] == slot[1] || slot[1] == slot[2] || slot[0] == slot[2])
     score += 1;
 }
 

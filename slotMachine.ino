@@ -5,7 +5,7 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 const int buttonPin = 2;
 const unsigned long interval = 3000;
-const int turnDisplayDelay = 1000;
+const int turnDisplayDelay = 750;
 
 boolean buttonIsPressed = false;
 unsigned long previousMillis = 0, currentMillis = 0;
@@ -52,6 +52,7 @@ void generateField() {
 void turn() {
   if(turnAllowed()) {
     generateSlot();
+    displayScore();
     displayTurn();
     calculeteScore();
     displayScore();
@@ -78,12 +79,13 @@ void generateSlot() {
 }
 
 void displayTurn() {
+  lcd.setCursor(0,0);
+  lcd.print(" | | ");
   int i = 0;
   for (int j = 0; j < 5; j = j+2) {
+    delay(turnDisplayDelay);
     lcd.setCursor(j,0);
     lcd.print(slot[i]);
-    if (i < 2)
-      delay(turnDisplayDelay);
     i++;
   }
 }

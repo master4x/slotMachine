@@ -4,8 +4,10 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 const int buttonPin = 2;
+const unsigned long interval = 500;
 
 boolean buttonIsPressed = false;
+unsigned long previousMillis = 0, currentMillis = 0;
 int slot[3];
 int score = 100;
 
@@ -30,7 +32,11 @@ void loop()
 }
 
 void buttonPressed() {
-  buttonIsPressed = true;
+  currentMillis = millis();
+  if (currentMillis - previousMillis >= interval) {
+    previousMillis = currentMillis;
+    buttonIsPressed = true;
+  }
 }
 
 void generateField() {
@@ -78,10 +84,25 @@ void displayTurn() {
 }
 
 void calculeteScore() {
-  /* code */
+  if (slot[0]==slot[1] && slot[1]==slot[2])
+    score += 25;
+  else if (slot[0]==slot[1] || slot[1]==slot[2] || slot[0]==slot[2])
+    score += 1;
 }
 
+int neededDigits(int value) {
+  int digits = 0;
+  if (value == 0)
+    return 1;
+  while (value > 0) {
+    value /= 10;
+    digits++;
+  }
+  return digits;
+}
 void displayScore() {
-  lcd.setCursor(13,1);
+  lcd.setCursor(12,1);
+  lcd.print("   ");
+  lcd.setCursor(16-neededDigits(score),1);
   lcd.print(score);
 }

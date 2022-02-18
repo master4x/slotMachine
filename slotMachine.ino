@@ -9,7 +9,7 @@ const int turnDisplayDelay = 750;
 
 boolean buttonIsPressed = false;
 unsigned long previousMillis = 0, currentMillis = 0;
-int slot[3];
+int slot[4];
 int score = 100;
 
 void setup()
@@ -45,6 +45,8 @@ void generateField() {
   lcd.print("|");
   lcd.setCursor(3,0);
   lcd.print("|");
+  lcd.setCursor(5,0);
+  lcd.print("|");
   lcd.setCursor(11,0);
   lcd.print("Score");
 }
@@ -73,7 +75,7 @@ bool turnAllowed() {
 
 void generateSlot() {
   score--;
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 4; i++) {
     slot[i] = random(0,9);
   }
 }
@@ -82,7 +84,7 @@ void displayTurn() {
   lcd.setCursor(0,0);
   lcd.print(" | | ");
   int i = 0;
-  for (int j = 0; j < 5; j = j+2) {
+  for (int j = 0; j < 7; j = j+2) {
     delay(turnDisplayDelay);
     lcd.setCursor(j,0);
     lcd.print(slot[i]);
@@ -91,9 +93,22 @@ void displayTurn() {
 }
 
 void calculeteScore() {
-  if (slot[0] == slot[1] && slot[1] == slot[2])
+  /* 4 simmelar */
+  if      (  slot[0] == slot[1] && slot[0] == slot[2] && slot[0] == slot[3] )
+    score += 100;
+  /* 3 simmelar */
+  else if ( slot[0] == slot[1] && slot[0] == slot[2] ||
+            slot[0] == slot[1] && slot[0] == slot[3] ||
+            slot[0] == slot[2] && slot[0] == slot[3] ||
+            slot[1] == slot[2] && slot[1] == slot[3]    )
     score += 25;
-  else if (slot[0] == slot[1] || slot[1] == slot[2] || slot[0] == slot[2])
+  /* 2 simmelar */
+  else if ( slot[0] == slot[1] ||
+            slot[0] == slot[2] ||
+            slot[0] == slot[3] ||
+            slot[1] == slot[2] ||
+            slot[1] == slot[3] ||
+            slot[2] == slot[3]    )
     score += 1;
 }
 

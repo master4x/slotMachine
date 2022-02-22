@@ -21,3 +21,12 @@ void FloppySlotSound::startSound() {
     myDrive.playTone(150,250);
     myDrive.playTone(200,250);
 }
+
+void FloppySlotSound::smallWin() {
+}
+
+void FloppySlotSound::mediumWin() {
+}
+
+void FloppySlotSound::bigWin() {
+}

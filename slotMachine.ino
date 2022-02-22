@@ -98,22 +98,31 @@ void displayTurn() {
 
 void calculeteScore() {
   /* 4 simmelar */
-  if      (  slot[0] == slot[1] && slot[0] == slot[2] && slot[0] == slot[3] )
+  if      (  slot[0] == slot[1] && slot[0] == slot[2] && slot[0] == slot[3] ) {
     score += 50;
+    displayScore();
+    myDrive.bigWin();
+  }
   /* 3 simmelar */
   else if ( slot[0] == slot[1] && slot[0] == slot[2] ||
             slot[0] == slot[1] && slot[0] == slot[3] ||
             slot[0] == slot[2] && slot[0] == slot[3] ||
-            slot[1] == slot[2] && slot[1] == slot[3]    )
+            slot[1] == slot[2] && slot[1] == slot[3]    ) {
     score += 5;
+    displayScore();
+    myDrive.mediumWin();
+   }
   /* 2 simmelar */
   else if ( slot[0] == slot[1] ||
             slot[0] == slot[2] ||
             slot[0] == slot[3] ||
             slot[1] == slot[2] ||
             slot[1] == slot[3] ||
-            slot[2] == slot[3]    )
+            slot[2] == slot[3]    ) {
     score += 1;
+    displayScore();
+    myDrive.smallWin();
+  }
 }
 
 int neededDigits(int value) {

@@ -16,6 +16,9 @@ public:
     FloppySlotSound(int driveselectPin, int directionPin, int stepPin);
     void playTone(int frequency, unsigned long durationTime);
     void startSound();
+    void smallWin();
+    void mediumWin();
+    void bigWin();
 };
 
 #endif

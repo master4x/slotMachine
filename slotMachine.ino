@@ -101,7 +101,7 @@ void calculeteScore() {
             slot[0] == slot[1] && slot[0] == slot[3] ||
             slot[0] == slot[2] && slot[0] == slot[3] ||
             slot[1] == slot[2] && slot[1] == slot[3]    )
-    score += 10;
+    score += 5;
   /* 2 simmelar */
   else if ( slot[0] == slot[1] ||
             slot[0] == slot[2] ||

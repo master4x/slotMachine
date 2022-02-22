@@ -1,7 +1,9 @@
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
+#include "FloppySlotSound.h"
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
+FloppySlotSound   myDrive(3,4,5);
 
 const int buttonPin = 2;
 const unsigned long interval = 3000;
@@ -21,6 +23,7 @@ void setup()
   lcd.backlight();
   delay(300);
   generateField();
+  myDrive.startSound();
   displayScore();
 }
 
@@ -87,6 +90,7 @@ void displayTurn() {
   for (int j = 0; j < 7; j = j+2) {
     delay(turnDisplayDelay);
     lcd.setCursor(j,0);
+    myDrive.playTone(300.250);
     lcd.print(slot[i]);
     i++;
   }

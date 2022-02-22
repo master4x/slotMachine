@@ -82,7 +82,7 @@ void generateSlot() {
 
 void displayTurn() {
   lcd.setCursor(0,0);
-  lcd.print(" | | ");
+  lcd.print(" | | | ");
   int i = 0;
   for (int j = 0; j < 7; j = j+2) {
     delay(turnDisplayDelay);
@@ -95,13 +95,13 @@ void displayTurn() {
 void calculeteScore() {
   /* 4 simmelar */
   if      (  slot[0] == slot[1] && slot[0] == slot[2] && slot[0] == slot[3] )
-    score += 100;
+    score += 50;
   /* 3 simmelar */
   else if ( slot[0] == slot[1] && slot[0] == slot[2] ||
             slot[0] == slot[1] && slot[0] == slot[3] ||
             slot[0] == slot[2] && slot[0] == slot[3] ||
             slot[1] == slot[2] && slot[1] == slot[3]    )
-    score += 25;
+    score += 10;
   /* 2 simmelar */
   else if ( slot[0] == slot[1] ||
             slot[0] == slot[2] ||

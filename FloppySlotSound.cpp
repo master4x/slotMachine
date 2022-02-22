@@ -4,18 +4,20 @@
 */
 #include "Arduino.h"
 #include "FloppySlotSound.h"
-#include "MusicFloppy.h"
+#include <MusicFloppy.h>
 
 FloppySlotSound::FloppySlotSound(int driveSelectPin, int directionPin, int stepPin) {
-    myDrive(driveSelectPin, directionPin, stepPin);
+    myDrive.setDriveSelectPin(driveSelectPin);
+    myDrive.setDirectionPin(directionPin);
+    myDrive.setStepPin(stepPin);
 }
 
-void FloppySlotSound::startSound(int frequency, unsigned long durationTime)) {
+void FloppySlotSound::playTone(int frequency, unsigned long durationTime) {
     myDrive.playTone(frequency, durationTime);
 }
 
 void FloppySlotSound::startSound() {
-    myDrive.playTone(100;250);
-    myDrive.playTone(150;250);
-    myDrive.playTone(200;250);
+    myDrive.playTone(100,250);
+    myDrive.playTone(150,250);
+    myDrive.playTone(200,250);
 }

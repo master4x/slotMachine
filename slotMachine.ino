@@ -90,7 +90,7 @@ void displayTurn() {
   for (int j = 0; j < 7; j = j+2) {
     delay(turnDisplayDelay);
     lcd.setCursor(j,0);
-    myDrive.playTone(300.250);
+    myDrive.playTone(300,250);
     lcd.print(slot[i]);
     i++;
   }

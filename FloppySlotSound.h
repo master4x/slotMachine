@@ -6,7 +6,7 @@
 #define FloppySlotSound_h
 
 #include "Arduino.h"
-#include "MusicFloppy.h"
+#include <MusicFloppy.h>
 
 class FloppySlotSound
 {
@@ -14,7 +14,7 @@ private:
     MusicFloppy myDrive;
 public:
     FloppySlotSound(int driveselectPin, int directionPin, int stepPin);
-    void playTone();
+    void playTone(int frequency, unsigned long durationTime);
     void startSound();
 };
 

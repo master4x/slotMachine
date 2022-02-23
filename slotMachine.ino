@@ -1,3 +1,12 @@
+/**
+ * @file    slotMachine.ino
+ * @author  Maximilian Wotsch, Leon Niklas Kelle
+ * @brief   code for our self build slotmachine powerd by an arduino
+ * @version 0.1
+ * @date    2022-02-09
+ * 
+ * @copyright Copyright (c) 2022
+ */
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include "FloppySlotSound.h" // selfwritten header-file for the sound of our slotmachine

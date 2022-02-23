@@ -15,4 +15,4 @@ An open source project turning a Arduino Mega and a floppy drive into a gambling
 
 ### Source code
 
-*Gambling can be addictive, please play responsibly. For help visit the Gambling page of the german BZgA. Underage gambling is an offence.*
+*Gambling can be addictive, please play responsibly. For help visit the Gambling page of the German BZgA. Underage gambling is an offence.*

@@ -14,8 +14,7 @@ unsigned long previousMillis = 0, currentMillis = 0;
 int slot[4];
 int score = 100;
 
-void setup()
-{
+void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(buttonPin), buttonPressed, FALLING);
 
@@ -27,8 +26,7 @@ void setup()
   displayScore();
 }
 
-void loop()
-{
+void loop() {
   if (buttonIsPressed) {
     turn();
     buttonIsPressed = false;
@@ -90,7 +88,7 @@ void displayTurn() {
   for (int j = 0; j < 7; j = j+2) {
     delay(turnDisplayDelay);
     lcd.setCursor(j,0);
-    myDrive.playTone(300,250);
+    myDrive.playTone(75,250);
     lcd.print(slot[i]);
     i++;
   }

@@ -26,11 +26,12 @@ int score = 100;
 /**
  * @brief setup function
  * 
- * initilize LCD and pushbutton
+ * initilize LCD and pushbutton and sets a randomSeed() for the random function so it generates diffrent values after restart
  */
 void setup() {
   pinMode(buttonPin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(buttonPin), buttonPressed, FALLING);
+  randomSeed(analogRead(0));
 
   lcd.init();
   lcd.backlight();

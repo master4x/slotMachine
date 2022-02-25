@@ -1,4 +1,4 @@
-# slotMachine
+# slotMachine🎰
 An open source project turning a Arduino Mega and a floppy drive into a gambling machine.
 
 ![buildOverview](img/build.png)

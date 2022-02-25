@@ -24,7 +24,7 @@ Three possibilities mean a win for the player, while only one means a loss.
 |:----:|:---:|:-------:|
 |   1  |  0  |  **-1** |
 
-### 2 simmelar slots (small wn)
+### 2 simmelar slots (small win)
 ![smallWinLCD](img/smallWin.png)
 | Cost | Win | Revenue |
 |:----:|:---:|:-------:|

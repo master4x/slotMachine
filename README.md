@@ -80,5 +80,6 @@ The header/global and `setup()` defines/includes the following:
 
 ----
 
-*Gambling can be addictive, please play responsibly. For help visit the Gambling page of the German BZgA. Underage gambling is an offence.
-[slotMachine](https://github.com/master4x/slotMachine) is an open source project created by [@MaxWotsch](https://github.com/MaxWotsch) & [@master4x](https://github.com/master4x), released under the MIT license.*
+*Gambling can be addictive, please play responsibly. For help visit the Gambling page of the German BZgA. Underage gambling is an offence.*
+
+*[slotMachine](https://github.com/master4x/slotMachine) is an open source project created by [@MaxWotsch](https://github.com/MaxWotsch) & [@master4x](https://github.com/master4x), released under the MIT license.*

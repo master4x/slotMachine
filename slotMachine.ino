@@ -4,6 +4,7 @@
  * @brief   code for our self build slotmachine powerd by an arduino
  * @version 0.1
  * @date    2022-02-26
+ * @url     https://github.com/master4x/slotMachine
  * 
  * @copyright Copyright (c) 2022
  */

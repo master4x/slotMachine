@@ -1,6 +1,8 @@
 # slotMachine🎰
 An open source project turning a Arduino Mega and a floppy drive into a gambling machine.
 
+[[Download]](https://github.com/master4x/slotMachine/releases/latest/download/slotMachine.ino)
+
 ![buildOverview](img/build.png)
 
 ## User Manual

@@ -2,8 +2,8 @@
  * @file    slotMachine.ino
  * @author  Maximilian Wotsch, Leon Niklas Kelle
  * @brief   code for our self build slotmachine powerd by an arduino
- * @version 0.2
- * @date    2022-02-26
+ * @version 0.3
+ * @date    2022-03-01
  * @url     https://github.com/master4x/slotMachine
  * 
  * @copyright Copyright (c) 2022
@@ -166,6 +166,15 @@ void calculeteScore() {
     displayScore();
     myDrive.mediumWin();
    }
+  /* 2 x 2 simmelar */
+  else if ( slot[0] == slot[1] && slot[2] == slot[3] ||
+            slot[0] == slot[2] && slot[1] == slot[3] ||
+            slot[0] == slot[3] && slot[1] == slot[2]    ) {
+    score += 2;
+    displayScore();
+    myDrive.smallWin();
+    myDrive.smallWin();
+  }
   /* 2 simmelar */
   else if ( slot[0] == slot[1] ||
             slot[0] == slot[2] ||

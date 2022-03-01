@@ -52,7 +52,7 @@ void setup() {
 void loop() {
   if (buttonIsPressed) {
     turn();
-    !buttonIsPressed;
+    buttonIsPressed = false;
   }
 }
 

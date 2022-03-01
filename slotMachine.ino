@@ -166,6 +166,15 @@ void calculeteScore() {
     displayScore();
     myDrive.mediumWin();
    }
+  /* 2 x 2 simmelar */
+  else if ( slot[0] == slot[1] && slot[2] == slot[3] ||
+            slot[0] == slot[2] && slot[1] == slot[3] ||
+            slot[0] == slot[3] && slot[1] == slot[2]    ) {
+    score += 2;
+    displayScore();
+    myDrive.smallWin();
+    myDrive.smallWin();
+  }
   /* 2 simmelar */
   else if ( slot[0] == slot[1] ||
             slot[0] == slot[2] ||

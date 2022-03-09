@@ -2,7 +2,7 @@
  * @file    slotMachine.ino
  * @author  Maximilian Wotsch, Leon Niklas Kelle
  * @brief   code for our self build slotmachine powerd by an arduino
- * @version 0.3
+ * @version 0.4
  * @date    2022-03-01
  * @url     https://github.com/master4x/slotMachine
  * 

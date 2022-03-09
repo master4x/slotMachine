@@ -19,7 +19,7 @@ const int buttonPin = 2;
 const unsigned long interval = 3000; // 3s
 const int turnDisplayDelay = 750; // 0.75s
 
-bool buttonIsPressed = false; // state switch variable
+volatile bool buttonIsPressed = false; // state switch variable
 unsigned long previousMillis = 0, currentMillis = 0; // save certain millis()
 int slot[4];
 int score = 100; // score reset value
@@ -126,7 +126,7 @@ void generateSlot() {
   score--;
 
   for (int i = 0; i < 4; i++) {
-    slot[i] = random(0, 9);
+    slot[i] = random(0, 10);
   }
 }
 
